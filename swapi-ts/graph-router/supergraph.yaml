@@ -1,0 +1,31 @@
+# Learn more about using the @apollo/rover CLI to work with supergraphs:
+#  https://www.apollographql.com/docs/rover/supergraphs/
+subgraphs:
+  films:
+    routing_url: http://localhost:5001
+    schema:
+      file: c:\Users\Stefan\code\graphql-notebook\swapi-ts\subgraphs\films\schema.graphql
+  people:
+    routing_url: http://localhost:5002
+    schema:
+      file: c:\Users\Stefan\code\graphql-notebook\swapi-ts\subgraphs\people\schema.graphql
+  planets:
+    routing_url: http://localhost:5003
+    schema:
+      file: c:\Users\Stefan\code\graphql-notebook\swapi-ts\subgraphs\planets\schema.graphql
+  species:
+    routing_url: http://localhost:5004
+    schema:
+      file: c:\Users\Stefan\code\graphql-notebook\swapi-ts\subgraphs\species\schema.graphql
+  starships:
+    routing_url: http://localhost:5005
+    schema:
+      file: c:\Users\Stefan\code\graphql-notebook\swapi-ts\subgraphs\starships\schema.graphql
+  vehicles:
+    routing_url: http://localhost:5006
+    schema:
+      file: c:\Users\Stefan\code\graphql-notebook\swapi-ts\subgraphs\vehicles\schema.graphql
+  root:
+    routing_url: http://localhost:5007
+    schema:
+      file: c:\Users\Stefan\code\graphql-notebook\swapi-ts\subgraphs\root\schema.graphql

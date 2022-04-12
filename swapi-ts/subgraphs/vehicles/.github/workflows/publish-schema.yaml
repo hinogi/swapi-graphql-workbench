@@ -1,0 +1,28 @@
+
+name: Publish Schema to Apollo Studio
+
+on:
+  push:
+    branches: [main]
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    environment: apollo
+    env:
+      APOLLO_VCS_COMMIT: ${{ github.event.pull_request.head.sha }}
+      APOLLO_KEY: ${{ secrets.APOLLO_KEY }}
+      APOLLO_GRAPH_REF: swapi@production
+      ROUTING_URL: http://localhost:5006
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          node-version: '14'
+          check-latest: true
+      - run: curl -sSL https://rover.apollo.dev/nix/latest | sh
+      - run: echo "$HOME/.rover/bin" >> $GITHUB_PATH
+      - run: npm run publish-schema
